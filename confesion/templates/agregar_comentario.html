@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h3>
+{{confesion.nombre}} 
+</h3>
+<div>
+Edad: {{confesion.edad}}
+</div>
+<div>
+Sexo: {{confesion.sexo}}
+</div>
+<div>
+<p>
+confesion : {{confesion.contenido}}
+</p>
+<hr>
+   <h3>Nuevo Comentario</h3>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form|crispy  }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>
+{{confesion.nombre}} 
+</h3>
+<div>
+Edad: {{confesion.edad}}
+</div>
+<div>
+Sexo: {{confesion.sexo}}
+</div>
+<div>
+<p>
+confesion : {{confesion.contenido}}
+</p>
+<hr>
+<a class="btn btn-default" href="{% url 'comentario' id=confesion.id %}">agregar comentario</a>
+<br>
+<br>
+comentarios:
+{% for comentario in confesion.comentario.all  %}
+<p>
+<b> Anonimo dice: </b><br> {{comentario.contenido}}
+</p>
+<hr>
+{% endfor %}
+{% endblock content %}

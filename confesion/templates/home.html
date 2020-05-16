@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+        <h1 class="display-5">Necesitas Confesarte? </h1>
+        <p class="lead">Esta es una pagina de prueba creada en python usando el framework Django emulando esas paginas en las cuales la gente se confesaba de manera anonima y sin ser victimas de prejuicios, pero sintiendo esa liberacion de haber dicho al mundo un secreto. </p>
+        <p><a class="btn btn-lg btn-success" href="confesion/agregar_confesion/" role="button">Confiesate Fatal! </a></p>
+      </div>
+<center>
+ <h1 class='display-3'>ultimas confesiones</h1>
+</center>
+<br>
+      <div class="row marketing">
+      
+        <div class="col-lg">
+        {% for confesion in confesiones%}
+        
+          <a href="confesion/{{confesion.id}}"><h4>{{confesion.sexo}} / {{confesion.edad}}</h4></a>
+          <p>{{confesion.contenido |truncatewords:25}} <a href="confesion/{{confesion.id}}"> [ Comentarios: {{confesion.comentario.all|length}} ]</a></p>
+<hr>
+             {% endfor %}
+        </div>
+      </div>
+{% endblock content %}
