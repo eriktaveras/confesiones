@@ -1,17 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>
-{{confesion.nombre}} 
-</h3>
-<div>
-Edad: {{confesion.edad}}
-</div>
-<div>
-Sexo: {{confesion.sexo}}
-</div>
+<h1 class='display-2'>
+<p>
+Anónimo Dice:
+</p>
+</h1>
+<p> Edad: {{confesion.edad}} / Sexo: {{confesion.sexo}}</p>
 <div>
 <p>
-confesion : {{confesion.contenido}}
+{{confesion.contenido}}
 </p>
 <hr>
 <a class="btn btn-default" href="{% url 'comentario' id=confesion.id %}">agregar comentario</a>
