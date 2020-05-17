@@ -13,15 +13,19 @@
       
         <div class="col-lg">
         {% for confesion in confesiones%}
-         <div class="card">
-        <div class="card-body">
-        <h5 class="card-title"><a href="confesion/{{confesion.id}}"><h4>{{confesion.sexo}} / {{confesion.edad}}</h4></a></h5>
-        <p class="card-text"><p>{{confesion.contenido |truncatewords:40}} <br> <br>
-        <a href=""confesion/{{confesion.id}}"" class="btn btn-primary">Comentarios <span class="badge badge-light">{{confesion.comentario.all|length}} </span></a>
+        
 
+        <div class="card">
+        <div class="card-header">
+        <h4><a href="confesion/{{confesion.id}}"><h4>{{confesion.sexo}} / {{confesion.edad}}</h4></a>
+        </div>
+        <div class="card-body">
+        <p class="card-text">{{confesion.contenido |truncatewords:40}}</p>
+        <a href="confesion/{{confesion.id}}" class="btn btn-primary stretched-link">Comentarios <span class="badge badge-dark">{{confesion.comentario.all|length}} </span></a>
         </div>
         </div>
+        <br>
         {% endfor %}
-        </div>
+                </div>
       </div>
 {% endblock content %}
