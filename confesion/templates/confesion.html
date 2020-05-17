@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class='display-2'>
-<p>
-Anónimo Dice:
-</p>
-</h1>
-<p> Edad: {{confesion.edad}} / Sexo: {{confesion.sexo}}</p>
-<div>
-<p>
-{{confesion.contenido}}
-</p>
+<div class="card">
+  <div class="card-header">
+   <h1 class="display-3">
+   Anónimo Dice:
+   </h1>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{confesion.contenido}}.</p>
+      <footer class="blockquote-footer">Sexo: {{confesion.sexo}} / Edad: {{confesion.edad}} </footer>
+    </blockquote>
+  </div>
+</div>
+<center><h1 class='display-4'>Comentarios:</h1></center>
 <hr>
-<a class="btn btn-default" href="{% url 'comentario' id=confesion.id %}">agregar comentario</a>
+<a href="{% url 'comentario' id=confesion.id %}" class="btn btn-primary btn-lg btn-block" role="button">agregar comentario</a>
 <br>
 <br>
-comentarios:
 {% for comentario in confesion.comentario.all  %}
-<p>
-<b> Anonimo dice: </b><br> {{comentario.contenido}}
-</p>
-<hr>
+<div class="alert alert-primary" role="alert">
+
+ {{comentario.contenido}}
+
+</div>
 {% endfor %}
+
+
 {% endblock content %}

@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<h1>agregar confesion</h1>
+<center>
+<h1 class="display-3">Agrega tu confesion</h1>
+<p> no tengas miedo, todo es totalmente anonimo, nadie sabra que tu lo escribiste</p>
 
-   <h2>Nueva confesion</h2>
+<h1> Formulario:</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form |crispy }}
+        {{ form |crispy}}
+        
         <button type="submit" class="save btn btn-default">Send</button>
     </form>
+
+</center>
+    
 {% endblock %}
