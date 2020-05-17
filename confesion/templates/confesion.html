@@ -18,12 +18,25 @@
 <a href="{% url 'comentario' id=confesion.id %}" class="btn btn-primary btn-lg btn-block" role="button">agregar comentario</a>
 <br>
 <br>
+<style type='text/css'>
+ 
+tr:nth-child(odd) {
+    background-color:#f2f2f2;
+}
+tr:nth-child(even) {
+    background-color:#fbfbfb;
+}
+ 
+</style>
 {% for comentario in confesion.comentario.all  %}
+
 <div class="alert alert-primary" role="alert">
+
 
  {{comentario.contenido}}
 
 </div>
+<hr>
 {% endfor %}
 
 
