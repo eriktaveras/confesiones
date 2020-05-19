@@ -12,7 +12,8 @@ Pip install -r requirements.txt
 luego corre la aplicacion
 
 ```
-python manage.py runserver```
+python manage.py runserver
+```
 
 ## Deployment
 
